@@ -45,8 +45,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestWhenInUseAuthorization()
@@ -58,7 +56,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -107,11 +104,19 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             let refreshAlert = UIAlertController(title: "LAP", message: "Add tree at this location?", preferredStyle: UIAlertControllerStyle.Alert)
             
             refreshAlert.addAction(UIAlertAction(title: "YES", style: .Default, handler: { (action: UIAlertAction!) in
+//  === TASK 1 ========================
+//                ANOTHER SCREEN SHOULD BE PULLED UP DISPLAYING THE QUESTIONS
+//                THAT THE USER MUST ANSWER, PUT CODE FOR BRINGING UP THE QUESTIONARE HERE, THIS SECTION
+//                OF CODE WILL BE EXECUTED WHEN YES IS PRESSED.
             }))
             
             refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
-                self.MapView.removeAnnotations(self.MapView.annotations)
-                print("FIX THE BUG THAT REMOVES ALL ANNOTATIONS WHEN CANCEL IS PRESSED!")
+//   === TASK 2 ======================
+//                THIS CODE IS EXECUTED WHEN THE USER DECIDES NOT TO PLACE A TREE, THE PIN THAT WAS PLACED
+//                SHOULD THEN BE REMOVED, I TRIED IMPLEMENTING THIS PART BUT I RAN INTO THE ISSUE THAT I COULD
+//                ONLY REMOVE ALL OF THE PINS IN THE VIEW, NOT JUST THE LAST PIN THAT WAS PLACED,
+//                SEE IF YOU CAN FIGURE OUT HOW TO ONLY REMOVE THE LAST PIN.
+             
             }))
             
             presentViewController(refreshAlert, animated: true, completion: nil)
